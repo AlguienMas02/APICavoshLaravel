@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('product', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->decimal('precio', 6,2);
+            $table->enum('categoria', ['bebidas_frias', 'bebidas_caliente', 'sandwich', 'postre']);
             $table->timestamps();
         });
     }
